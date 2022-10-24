@@ -1,0 +1,368 @@
+@charset "UTF-8";
+html {
+  font-size: 100%;
+  font-family: "Hiragino Kaku Gothic ProN", "メイリオ", "Hiragino Sans", sans-serif;
+}
+
+body {
+  color: #121212;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+a {
+  color: #121212;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.site-title {
+  line-height: 1px;
+}
+.site-title a {
+  display: block;
+}
+
+.sec-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+
+.fade-in.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* -------------------------------------------------
+Header
+--------------------------------------------------*/
+#header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  padding: 20px 40px;
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
+}
+#header .site-title {
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  z-index: 20;
+}
+#header .site-title a {
+  display: block;
+}
+#header #navi {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  color: #fff;
+  padding: 60px 25px;
+  background-color: #121212;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: all 0.5s;
+  z-index: 20;
+}
+#header #navi a {
+  color: #fff;
+}
+#header #navi.open {
+  left: 0;
+  opacity: 1;
+}
+#header #navi ul {
+  margin: 0;
+  padding: 0;
+}
+#header #navi ul.nav-menu {
+  margin-bottom: 60px;
+  border-top: solid 1px #fff;
+}
+#header #navi .nav-menu li {
+  border-bottom: 1px solid #fff;
+  padding: 20px 0;
+}
+#header #navi .nav-sns li {
+  padding: 5px 0;
+}
+#header .hamburger-menu {
+  display: block;
+  position: fixed;
+  top: 25px;
+  right: 45px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 20;
+}
+#header .hamburger-menu span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+#header .hamburger-menu span:nth-child(1) {
+  top: 4px;
+}
+#header .hamburger-menu span:nth-child(2) {
+  top: 14px;
+}
+#header .hamburger-menu span:nth-child(3) {
+  bottom: 4px;
+}
+#header .hamburger-menu.open span {
+  background-color: #fff;
+}
+#header .hamburger-menu.open span:nth-child(1) {
+  transform: translateY(10px) rotate(-315deg);
+}
+#header .hamburger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+#header .hamburger-menu.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(315deg);
+}
+#header #mask {
+  display: none;
+  transition: all 0.5s;
+}
+#header #mask.open {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* -------------------------------------------------
+Main
+--------------------------------------------------*/
+.main {
+  padding-top: 80px;
+}
+
+/* -------------------------------------------------
+Video
+--------------------------------------------------*/
+.bg-video {
+  width: 100%;
+}
+
+/* -------------------------------------------------
+Pick Up
+--------------------------------------------------*/
+#pickup {
+  padding: 100px 0 50px;
+}
+#pickup .slick-area {
+  visibility: hidden;
+}
+#pickup .slick-area.slick-initialized {
+  visibility: visible;
+}
+#pickup .slick-area div {
+  padding: 0 30px;
+}
+#pickup .slick-area div img {
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* -------------------------------------------------
+Feature
+--------------------------------------------------*/
+#feature {
+  max-width: 1240px;
+  padding: 100px 16px 50px;
+  margin: -50px auto 10px;
+}
+#feature .grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+#feature .grid .item {
+  box-shadow: 0 0 8px 4px #ccc;
+}
+#feature .grid .item img {
+  vertical-align: top;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#feature .grid .item .item-content {
+  padding: 30px;
+}
+#feature .grid .item .item-content .item-cat {
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+}
+#feature .grid .item .item-content .item-text {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#feature .grid .item .item-content .item-date {
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+/* -------------------------------------------------
+Contact
+--------------------------------------------------*/
+#contact {
+  color: #fff;
+  background-color: #121212;
+  padding: 50px 0;
+}
+#contact .sec-title {
+  color: #fff;
+}
+#contact .content {
+  max-width: 1240px;
+  display: flex;
+  padding: 0 16px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+#contact .content .contact-info,
+#contact .content .contact-form {
+  width: 45%;
+}
+#contact .content .contact-info p,
+#contact .content .contact-form p {
+  margin-bottom: 30px;
+}
+#contact .contact-form input,
+#contact .contact-form textarea {
+  width: 100%;
+  color: #121212;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+#contact label {
+  cursor: default;
+}
+#contact .contact-form .button input {
+  width: 200px;
+  color: #fff;
+  background-color: #121212;
+  border: 1px solid #fff;
+  padding: 12px 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+#contact .contact-form .button input:hover {
+  background-color: #fff;
+  color: #202020;
+}
+
+/* -------------------------------------------------
+Footter
+--------------------------------------------------*/
+#footer {
+  width: 100%;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.75rem;
+}
+
+/* -------------------------------------------------
+SP
+--------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  .sec-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  /* -------------------------------------------------
+  ヘッダー
+  --------------------------------------------------*/
+  #header {
+    padding: 20px 16px; /* PC表示は padding: 20px 40px; */ /* ⇨ 効いてない */
+  }
+  .hamburger-menu {
+    right: 20px; /* PC表示は right: 45px; */ /* ⇨ 効いてない */
+  }
+  /* -------------------------------------------------
+  Video
+  --------------------------------------------------*/
+  .bg-video {
+    width: 100%;
+    height: 100vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  /* -------------------------------------------------
+  Pick Up
+  --------------------------------------------------*/
+  #pickup {
+    padding: 80px 0;
+  }
+  #pickup .slick-area div {
+    padding: 0 20px;
+  }
+  /* -------------------------------------------------
+  Feature
+  --------------------------------------------------*/
+  #feature {
+    padding: 80px 16px; /* PC表示は padding: 100px 16px 50px; */ /* ⇨ 効いてない */
+  }
+  #feature .grid .item .item-content {
+    padding: 16px; /* PC表示は padding: 30px; */
+  }
+  /*-------------------------------------------
+  Contact
+  -------------------------------------------*/
+  #contact {
+    padding: 80px 0; /* PC表示は padding: 50px 0; */
+  }
+  #contact .content {
+    flex-direction: column;
+  }
+  #contact .content .contact-info {
+    width: 100%;
+  }
+  #contact .content .contact-form {
+    width: 100%;
+  }
+  #contact .content .contact-form .button input {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
